@@ -1,16 +1,25 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
-export default {
+export default {   
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './src/**/*.{html,js}',
+        './vendor/wireui/wireui/resources/**/*.blade.php',
+        './vendor/wireui/wireui/ts/**/*.ts',
+        './vendor/wireui/wireui/src/View/**/*.php'
     ],
 
     theme: {
         extend: {
+            colors: {
+primary: colors.blue
+
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
@@ -18,4 +27,10 @@ export default {
     },
 
     plugins: [forms],
+    
+    presets: [
+
+        require('./vendor/wireui/wireui/tailwind.config.js')
+
+    ],
 };
