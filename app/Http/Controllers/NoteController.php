@@ -5,15 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use App\Http\Requests\StoreNoteRequest;
 use App\Http\Requests\UpdateNoteRequest;
+use Illuminate\Contracts\View\View;
 
 class NoteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+public function __construct()
+{
+    $this->middleware("auth");
+}
+
+    public function index(): View
     {
-        //
+return view('notes.index');        
     }
 
     /**

@@ -22,3 +22,7 @@
 20-02-2024
 -  Initialized Laravel breeze with Livewire, Alpine, and Tailwind.
 - Added WireUI and configured necessary components / tools.
+
+29-02-2024
+- Recreated the Welcome Page.
+- Navigate - navigate!
